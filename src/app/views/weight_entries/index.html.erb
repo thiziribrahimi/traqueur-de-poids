@@ -2,10 +2,14 @@
 <div class="container mx-auto p-6">
   <h1 class="text-4xl font-bold text-center text-blue-600 mb-6">Trackeuse de Poids</h1>
 
+  <div class="mb-4">
+    
+  </div>
+
   <div class="flex justify-end mb-4">
     <%= link_to "Ajouter une nouvelle entrée", new_weight_entry_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
   </div>
-
+  
   <div class="overflow-x-auto">
     <table class="min-w-full bg-white shadow-md rounded-lg">
       <thead>
@@ -23,12 +27,12 @@
             <td class="py-3 px-6 text-center flex justify-center">
               <%= link_to "Voir", weight_entry_path(entry), class: "text-blue-500 hover:underline" %> |
               <%= link_to "Modifier", edit_weight_entry_path(entry), class: "text-green-500 hover:underline" %> |
-              <%= button_to weight_entry_path(entry), method: :delete, 
-		        form: { data: { turbo_confirm: "Are you sure...?" } },
-				class: "text-red-500 hover:underline", title: "Delete" do
-				%>
-				Supprimer
-				<% end %>
+              <%= button_to weight_entry_path(entry), method: :delete,
+            form: { data: { turbo_confirm: "Are you sure...?" } },
+        class: "text-red-500 hover:underline", title: "Delete" do
+      %>
+        Supprimer
+        <% end %>
             </td>
           </tr>
         <% end %>
