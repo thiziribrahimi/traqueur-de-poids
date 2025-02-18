@@ -13,6 +13,14 @@
     <p class="text-lg text-gray-700"><%= @weight_entry.date.strftime("%d %B %Y") %></p>
   </div>
 
+  <!-- Ajout du nombre de pas -->
+  <div class="mb-4">
+    <h2 class="text-xl font-semibold text-gray-800">Nombre de Pas</h2>
+    <p class="text-lg text-gray-700">
+      <%= @weight_entry.steps.present? ? @weight_entry.steps : 'Non renseigné' %>
+    </p>
+  </div>
+
   <div class="flex justify-between mt-6">
     <%= link_to 'Modifier', edit_weight_entry_path(@weight_entry), class: "px-4 py-2 bg-yellow-600 text-white font-semibold rounded-md hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500" %>
   </div>

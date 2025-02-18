@@ -1,0 +1,28 @@
+<%= form_with(model: @weight_entry, local: true) do |form| %>
+    <% if @weight_entry.errors.any? %>
+      <!-- Gestion des erreurs -->
+    <% end %>
+  
+    <!-- Champ pour la date -->
+    <div class="field">
+      <%= form.label :date, "Date" %>
+      <%= form.date_field :date %>
+    </div>
+  
+    <!-- Champ pour le poids -->
+    <div class="field">
+      <%= form.label :weight, "Poids (kg)" %>
+      <%= form.number_field :weight, step: :any %>
+    </div>
+  
+    <!-- Nouveau champ pour le nombre de pas -->
+    <div class="field">
+      <%= form.label :steps, "Nombre de pas" %>
+      <%= form.number_field :steps %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+  
